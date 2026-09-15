@@ -202,12 +202,17 @@ body.open .d2{animation-delay:.5s}
 /* ── hero ── */
 .hero{min-height:100svh;display:grid;align-items:center}
 .hero h1{font-family:var(--script);font-size:clamp(52px,14vw,108px);line-height:1.06}
-.hero .std{font-size:clamp(22px,5.4vw,34px);color:var(--ink-2);margin-top:6px;letter-spacing:.02em}
-.hero .names{font-size:clamp(17px,4.1vw,27px);letter-spacing:.12em;text-transform:uppercase;
-  color:var(--gold-d);margin-top:clamp(24px,4vw,36px);line-height:1.6}
-.hero .names i{font-family:var(--serif);font-style:italic;font-size:clamp(21px,4.6vw,29px);
-  text-transform:none;letter-spacing:0;color:#8A6C2C;vertical-align:-1px;margin:0 10px;
-  -webkit-text-fill-color:#8A6C2C}
+.hero .std{display:flex;align-items:center;justify-content:center;
+  gap:clamp(10px,2.6vw,18px);margin-top:clamp(14px,2.6vw,20px)}
+.hero .std span{font-size:clamp(11px,2.9vw,14px);letter-spacing:.44em;text-indent:.44em;
+  text-transform:uppercase;color:var(--ink-2);white-space:nowrap}
+.hero .std svg{flex:0 0 auto;width:clamp(44px,13vw,96px);color:var(--gold)}
+.hero .std svg.flip{transform:scaleX(-1)}
+.hero .names{font-family:var(--script);font-size:clamp(30px,7.4vw,46px);
+  letter-spacing:0;text-transform:none;color:var(--gold-d);
+  margin-top:clamp(20px,3.4vw,30px);line-height:1.34}
+.hero .names i{display:block;font-family:var(--serif);font-style:italic;
+  font-size:clamp(17px,3.8vw,23px);color:var(--gold-d);line-height:1;margin:2px 0}
 .hero .date{font-size:clamp(14.5px,3.5vw,18px);letter-spacing:.34em;text-transform:uppercase;
   font-weight:500;color:var(--ink);margin-top:20px}
 .church{width:clamp(96px,20vw,150px);margin:clamp(24px,4vw,38px) auto 0;
@@ -555,6 +560,11 @@ body.open .d2{animation-delay:.5s}
   <path d="M0 0C4.6 -5.2 13.3 -5.2 19.0 0C13.3 5.2 4.6 5.2 0 0Z" transform="translate(74.0 20.1) rotate(530.0)"/><path d="M3.0 0H15.6" transform="translate(74.0 20.1) rotate(530.0)" opacity=".45"/>
   <path d="M0 0C4.6 -5.2 13.3 -5.2 19.0 0C13.3 5.2 4.6 5.2 0 0Z" transform="translate(86.9 17.0) rotate(539.0)"/><path d="M3.0 0H15.6" transform="translate(86.9 17.0) rotate(539.0)" opacity=".45"/>
 </g></symbol>
+  <symbol id="stdrule" viewBox="0 0 96 12">
+    <path d="M0 6h66" fill="none" stroke="currentColor" stroke-width="1"/>
+    <circle cx="72" cy="6" r="1.4" fill="currentColor"/>
+    <path d="M85 6l5.5-4.4 5.5 4.4-5.5 4.4z" fill="currentColor"/>
+  </symbol>
   <symbol id="i-cross" viewBox="0 0 24 40">
     <path d="M12 2v36M4 12h16"/>
   </symbol>
@@ -672,8 +682,12 @@ body.open .d2{animation-delay:.5s}
     <svg class="eng d" viewBox="0 0 220 240"><use href="#eng"/></svg>
     <div class="plate-in rv d1">
       <h1 class="gilt">Our Wedding</h1>
-      <p class="std">Save the Date</p>
-      <p class="names gilt-deep">Jisha Mariyam G <i>&amp;</i> Joji Johnson</p>
+      <div class="std">
+        <svg viewBox="0 0 96 12" aria-hidden="true"><use href="#stdrule"/></svg>
+        <span>Save the Date</span>
+        <svg class="flip" viewBox="0 0 96 12" aria-hidden="true"><use href="#stdrule"/></svg>
+      </div>
+      <p class="names">Jisha Mariyam G <i>&amp;</i> Joji Johnson</p>
       <p class="date">Monday, 11 January 2027</p>
       <svg class="church" viewBox="0 0 120 108"><use href="#church"/></svg>
       <div class="scroll-cue rv d2">Scroll<i></i></div>
@@ -923,7 +937,7 @@ body.open .d2{animation-delay:.5s}
               country code.
    ────────────────────────────────────────────────────────────────── */
 var RSVP = {
-  endpoint: 'https://script.google.com/macros/s/AKfycbzyyO2_5g_2t-f20fb2wDFO7-xI7wE84xuMnDXcyI_KPXaE-9XX1X6bHd-mfARpHmn6/exec',
+  endpoint: '',
   whatsapp: '916397305023'
 };
 
