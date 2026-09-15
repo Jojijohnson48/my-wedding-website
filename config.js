@@ -10,6 +10,6 @@
               is empty, or if it cannot be reached.
    ───────────────────────────────────────────────────────────── */
 window.RSVP_CONFIG = {
-  endpoint: '',
+  endpoint: 'https://script.google.com/macros/s/AKfycbzyyO2_5g_2t-f20fb2wDFO7-xI7wE84xuMnDXcyI_KPXaE-9XX1X6bHd-mfARpHmn6/exec',
   whatsapp: '916397305023'
 };
