@@ -6,6 +6,7 @@
 <title>Our Wedding &middot; Jisha &amp; Joji</title>
 <meta name="description" content="Save the date. The wedding of Jisha Mariyam G and Joji Johnson, 11 January 2027, Mar Baselios Gregorios Orthodox Church, Poruvazhy, Kerala.">
 <meta name="theme-color" content="#F4EFE2">
+<meta name="build" content="2026-09-09 · script names, engraved save-the-date">
 <meta property="og:title" content="Our Wedding &middot; Jisha Mariyam G &amp; Joji Johnson">
 <meta property="og:description" content="11 January 2027 &middot; Poruvazhy, Kerala">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -816,7 +817,7 @@ body.open .d2{animation-delay:.5s}
       <div class="story io">
         <div class="story-txt">
           <h2 class="sec-t script">Our Story</h2>
-          <p>We met the way most good things begin &mdash; quietly, and without either of us noticing it mattered. Somewhere between long phone calls and shared prayers, a friendship turned into something we could not name for a while.</p>
+          <p>We met the way most good things begin quietly, and without either of us noticing it mattered. Somewhere between long phone calls and shared prayers, a friendship turned into something we could not name for a while.</p>
           <p>Two families, two states, one long road of trains and airports. What we found at the end of it was worth every mile. On the eleventh of January we will stand before God and the people we love, and say yes to the rest of it.</p>
           <p class="verse-line">&ldquo;I have found the one whom my soul loves.&rdquo;
             <cite>Song of Solomon 3:4</cite></p>
@@ -922,24 +923,16 @@ body.open .d2{animation-delay:.5s}
   </div>
 </main>
 
+<script src="config.js"></script>
 <script>
 (function(){
 'use strict';
 
 /* WHERE RSVP REPLIES GO — whatsapp: digits only, e.g. '919876543210' */
-/* ── WHERE RSVP REPLIES GO ──────────────────────────────────────────
-   endpoint : paste your Google Apps Script /exec URL here and replies
-              are saved straight to your sheet — nothing opens, the
-              guest just sees "Thank you".
-   whatsapp : kept as a safety net. If the sheet cannot be reached
-              (guest offline, script redeployed), the reply falls back
-              to WhatsApp so it is never lost. Digits only, with the
-              country code.
-   ────────────────────────────────────────────────────────────────── */
-var RSVP = {
-  endpoint: '',
-  whatsapp: '916397305023'
-};
+/* Settings live in config.js so that replacing this file never
+   wipes your Apps Script URL. The fallback below only applies if
+   config.js is missing. */
+var RSVP = window.RSVP_CONFIG || { endpoint:'', whatsapp:'916397305023' };
 
 var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
